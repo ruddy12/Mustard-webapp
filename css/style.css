@@ -1,0 +1,38 @@
+/* .navbar-brand{
+padding: 0px;
+}
+.navbar .brand{
+
+max-height: 50px;
+overflow: visible;
+padding-top: 0;
+padding-bottom: 0;
+-o-object-fit: contain;
+ object-fit: contain;
+
+}*/
+/*.navbar-brand>img{
+	max-height: 50px;
+	height: 100px;
+	padding: 0px 15px 0px;
+	width: auto;
+	margin: auto;
+	-o-object-fit: contain;
+      object-fit: contain;
+      overflow: visible;
+}
+.navbar a.navbar-brand{
+padding: 0px 15px 0px;
+
+}*/
+body{
+
+font-family: freight-text-pro;
+font-size: 1.25em;
+line-height: 32%;
+}
+article{
+	font-family: freight-text-pro;
+font-size: 1.25em;
+line-height: 32%;
+}
