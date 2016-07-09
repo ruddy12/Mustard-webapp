@@ -64,9 +64,9 @@ session_start(); //starts session here
       <ul class="nav navbar-nav navbar-right" style="font-size:1.2em;">
         <li class="active"><a href="#">Home </a></li>
           <li><a href="#">News</a></li>
-          <li  class="active"><a href="#">Register</a></li>
+          <li  class="active"><a href="register.php">Register</a></li>
         <li class="active"><a href="http://linoit.com/users/ruddy12/canvases/Mustard#e41746255">NoticeBoard</a></li>
-        <li class="dropdown">
+   <!--     <li class="dropdown">
           <a data-target="#" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Inspiration Stories</a></li>
@@ -75,7 +75,7 @@ session_start(); //starts session here
             <li role="separator" class="divider"></li>
             <li><a href="#">Business Forum</a></li>
             
-          </ul>
+          </ul> -->
         </li>
       </ul>
        <!--search bar-->

@@ -9,7 +9,21 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="style.css" href="css/main.css"> 
+     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+     <meta name="description" content="Circle Hover Effects with CSS Transitions" />
+        <meta name="keywords" content="circle, border-radius, hover, css3, transition, image, thumbnail, effect, 3d" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+        <link rel="stylesheet" type="text/css" href="css/style4.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
+
    <style type="text/css">
+   body{
+    font-family: "freight-text-pro';
+   }
     .nav{
       /*font-family: 'freight-text-pro';*/
       font-size: 1.25em;
@@ -99,7 +113,7 @@ top:50%;
 
       .well > h2{
          color: #0033FF;
-         font-family: 'freight-text-pro';
+         font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
          font-size: 2.25em;
 }
 .panel p a{
@@ -133,7 +147,7 @@ position:relative;
 transition:all .4s linear;
 }
 
-#main h3 {
+/*#main h3 {
 text-transform:uppercase;
 color:#fff;
 text-align:center;
@@ -146,7 +160,7 @@ transform:translatey(-100px);
 -webkit-transition:all .2s ease-in-out;
 transition:all .2s ease-in-out;
 padding:10px;
-}
+}*/
 
 #main a.info {
 text-decoration:none;
@@ -190,16 +204,24 @@ transform:translatey(0);
 -webkit-transition-delay:.2s;
 transition-delay:.2s;
 }
+#articles2{
+  background-color: #fabe28;
+   height: auto;
+  width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+  font-size: 1em;
+}
 
     </style>
 
 </head>
-<body>
+<body data-spy="scroll" data-target="#uxt" data-offset="70">
 
-<!-- Preloader -->
+<!-- Preloader 
   <div id="preloader" >
-    <center><div id="status" style="color: #ffffff; font-size:2.25em;">
-    MUSTARD LOADING...</div></center>
+    <center><div id="status" style="color: #00c176; font-size:2.25em;">
+    MUSTARD SEED LOADING...</div></center>
     <center><div class="loader" style="align:center">  
     <img src="img/mustardwelcome.jpg" class="responsive">
 </div></center>
@@ -219,7 +241,7 @@ transition-delay:.2s;
 	    <span class="icon-bar"></span>
      </button>
       <a class="navbar-brand">
-      	<img  style="width:160px; height: 35px; align=left;" src="img/musstardssed.png" >
+      	<a href="index.html"><img  style="width:160px; height: 35px; align=left;" src="img/musstardssed.png" ></a>
       	
       </a>
     </div>
@@ -230,11 +252,15 @@ transition-delay:.2s;
     <div class="collapse navbar-collapse" id="navbarCollapse">
     
       <ul class="nav navbar-nav navbar-right" style="font-size:1.2em;">
-        <li class="active"><a href="#">Home </a></li>
-          <li><a href="#">News</a></li>
-          <li  class="active"><a href="mustard/register.php">Register</a></li>
-        <li class="active"><a href="mustard/noticeboard.php">NoticeBoard</a></li>
-        <li class="dropdown">
+        <li class="active"><a href="#home">Home </a></li>
+         <!-- <li><a href="#">News</a></li>-->
+          <li  class="active"><a href="#noticeboard">NoticeBoard</a></li>
+        <li class="active"><a href="#register">Register</a></li>
+        <li class="active"><a href="#login">Login</a></li>
+        <li class="active"><a href="#main">Articles</a></li>
+        <li class="active"><a href="#blogs">Blogs</a></li>
+        <li class="active"><a href="#contacts">Contacts</a></li>
+       <!-- <li class="dropdown">
           <a data-target="#" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Inspiration Stories</a></li>
@@ -244,16 +270,16 @@ transition-delay:.2s;
             <li><a href="#">Business Forum</a></li>
             
           </ul>
-        </li>
+        </li>-->
       </ul>
        <!--search bar-->
         
-       <form action="" class="navbar-form navbar-right" role="form-control" action="search.php" method="get">
+       <!--<form action="" class="navbar-form navbar-right" role="form-control" action="search.php" method="get">
            <div class="form-group has-feedback">
              <i class="form-control-feedback glyphicon glyphicon-search"></i>
              <input type="text" class="form-control" name="search" placeholder="search">
            </div>
-        </form>
+        </form>-->
      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -295,16 +321,17 @@ transition-delay:.2s;
   <div class="list-group">
    <!-- <a href="#" class="list-group-item active"><span class="glyphicon glyphicon-hand-right"></span> Trending Topics<span class="badge">15</span></a>-->
     <!--<a href="#" class="list-group-item "><span class="glyphicon glyphicon-camera"></span> Gallery<span class="badge">25</span></a>-->
-    <a href="Articles.html" class="list-group-item active " onmousemove="myfunction()"><span class="glyphicon glyphicon-file"></span> Articles<span class="badge">8</span></a>
-    <!--<a href="#" class="list-group-item "><span class="glyphicon glyphicon-file"></span> Popular Article<span class="badge">5</span></a>-->
-    <a href="http://linoit.com/users/ruddy12/canvases/Mustard#e41746255" class="list-group-item "><span class="glyphicon glyphicon-folder-open"></span>Notice Board<span class="badge">7</span></a>
+    <a href="Articles.html" class="list-group-item active " onmousemove="myfunction()"><span class="glyphicon glyphicon-file"></span> All Articles<span class="badge">8</span></a>
+    <a href="http://linoit.com/users/ruddy12/canvases/Mustard#e41746255" class="list-group-item " id="noticeboard"><span class="glyphicon glyphicon-folder-open"></span>Notice Board<span class="badge">7</span></a>
+    <a href="mustard/register.php" class="list-group-item " id="register"><span class="glyphicon glyphicon-user"></span>Register<span class="badge">7</span></a>
+    <a href="mustard/login.php" class="list-group-item " id="login"><span class="glyphicon glyphicon-user"></span>Login<span class="badge">7</span></a>
     <a href="editor.html" class="list-group-item "><span class="glyphicon glyphicon-envelope"></span>Letter to the Editor<span class="badge">14</span></a>
     <a href="#" class="list-group-item "><span class="glyphicon glyphicon-book"></span>Resources<span class="badge">10</span></a>
     <a href="#" class="list-group-item "><span class="glyphicon glyphicon-user"></span>Quotes<span class="badge">12</span></a>
-    <a href="Blogs.html" class="list-group-item "><span class="glyphicon glyphicon-cloud"></span>Blogs<span class="badge">3</span></a>
+    <a href="Blogs.html" class="list-group-item "><span class="glyphicon glyphicon-cloud"></span>All Blogs<span class="badge">3</span></a>
     <a href="templates/videos.html" class="list-group-item "><span class="glyphicon glyphicon-cloud"></span>Video<span class="badge">3</span></a>
     <a href="templates/downloads.html" class="list-group-item "><span class="glyphicon glyphicon-film"></span>Sermons<span class="badge">3</span></a>
-    <a href="Blogs.html" class="list-group-item "><span class="glyphicon glyphicon-film"></span>Short films<span class="badge">5</span></a>
+    <a href="shortfilms.html" class="list-group-item "><span class="glyphicon glyphicon-film"></span>Short films<span class="badge">5</span></a>
     <a href="http://www.challies.com/resources/take-a-quiz-on-christ" class="list-group-item " data-toggle="tooltip" title="Take a small quiz on Christ"><span class="glyphicon glyphicon-blackboard"></span>Quizes<span class="badge">10</span>tooltip</a>
     <div clas="col-sm-2">
       
@@ -332,7 +359,7 @@ transition-delay:.2s;
     <!--vision -->
     <div class="panel panel-default">
     <div class="panel-heading">
-    <h2 align="center" style=" color:#ff8a00;">OUR VISION</h2>
+    <h2 align="center" style=" color:#d35f14; font-size:1.7em; line-height:32px;">OUR VISION</h2>
     </div><!--panel heading -->
     <div class="panel-body">" an aggressively God-loving, Bible-saturated, Spirit-filled, racially diverse church knowing and proclaiming the excellencies of Christ for the glory of God and the joy of all people. We are reformed in that we believe in the doctrines of grace and at the same time we are very evangelistic and missions-minded."</div>
         
@@ -349,12 +376,21 @@ transition-delay:.2s;
     <div id="collapseone" class="panel-collapse collapse collapse">
     <div class="panel-body">
      <ul class="list-group">
-          <li class="list-group-item"> <p align="center" style="font-size:1.25em;color: #0033FF; " onmouseover="hover(this)" onmouseout="hover2(this)"> <a href="#"></a>#Finances </p></li>
-          <li class="list-group-item"> <p align="center" style="font-size:1.25em;color: #0033FF; " onmouseover="hover(this)" onmouseout="hover2(this)"> <a href="#"></a>#Work </p></li>
-          <li class="list-group-item"> <p align="center" style="font-size:1.25em;color: #0033FF; " onmouseover="hover(this)" onmouseout="hover2(this)"> <a href="#"></a>#False Teachers </p></li>
+          <li class="list-group-item"> <p align="center" style="font-size:1.25em;color: #0033FF; " onmouseover="hover(this)" onmouseout="hover2(this)"> <a href="http://www.challies.com/topics/finances">#Finances </a></p>
+
+
+          </li>
+          <li class="list-group-item"> <p align="center" style="font-size:1.25em;color: #0033FF; " onmouseover="hover(this)" onmouseout="hover2(this)"> <a href="http://www.challies.com/topics/work">#Work </a></p>
+
+             
+          </li>
+          <li class="list-group-item"> <p align="center" style="font-size:1.25em;color: #0033FF; " onmouseover="hover(this)" onmouseout="hover2(this)"> <a href="http://www.challies.com/topics/false-teachers">#False Teachers</a> </p>
+
+              
+          </li>
         </ul>
       <!--<p align="center" style="font-size:2.25em;color: #0033FF; " onmouseover="hover(this)" onmouseout="hover2(this)"> <a href=""></a>#Finances <a href=""></a>#Holiness <a href=""></a> #work <a href=""></a> #False Teachers </p> -->
-     <center> <p><div class="fb-share-button" data-href="http://localhost:8181/mustardofficial/index.html" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8181%2Fmustardofficial%2Findex.html&amp;src=sdkpreparse">Share</a></div><!--facebook --> <p><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8181/mustardofficial/index.html" data-via="RUFUSNgangaGonz" data-dnt="true">Tweet</a> </p></center><!--twitter share -->
+     <!--<center> <p><div class="fb-share-button" data-href="http://localhost:8181/mustardofficial/index.html" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8181%2Fmustardofficial%2Findex.html&amp;src=sdkpreparse">Share</a></div><!--facebook --><!-- <p><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8181/mustardofficial/index.html" data-via="RUFUSNgangaGonz" data-dnt="true">Tweet</a> </p></center>twitter share -->
      </div><!--panel body-->
       </div>
     </div>
@@ -364,7 +400,7 @@ transition-delay:.2s;
     <div class="well">
     <div class="row"><!--grid with three articles-->
     <div id="main">
-    <h3 align="center">Articles</h3>
+    <h3 align="center" style= "color:#ff8a00; font-size:2.25em;"  onmouseout="articles(this);" onmouseover="article(this);" >Articles</h3>
       <div class="col-md-4">
        <div class="thumbnail">
       
@@ -404,6 +440,55 @@ transition-delay:.2s;
         
           </div><!--thumbnail-->
       </div><!--col-xs-4-->
+
+
+      <section id="articles2">
+      <div class="row">
+          <div class="col-md-4">
+       <div class="thumbnail">
+      
+     <img src="img/depravity.jpg" class="img-rounded"  style="" />
+        <h3 align="center"><strong>The Deperavity of man</strong></h3>
+        <!--</div> overlay-->
+                <p>The New York Times bestselling Seeking Allah, Finding Jesus, describes Nabeel’s dramatic journey from Islam to Christianity, complete with friendships, investigations, and supernatural dreams along the way.</p>
+                 <!--<p><a class="info" href="http://www.answeringjihad.com" class="btn btn-primary">Read More</a></p>-->
+                 <P><a href="http://www.answeringjihad.com" class="btn btn-danger">Read More</a></P>
+                 <p><div class="fb-share-button" data-href="http://localhost:8181/mustardofficial/index.html" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8181%2Fmustardofficial%2Findex.html&amp;src=sdkpreparse">Share</a></div></p><!--facebook share -->
+                 <p><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8181/mustardofficial/index.html" data-via="RUFUSNgangaGonz" data-dnt="true">Tweet</a> </p><!--twitter share-->
+                 </div><!--thumbnail-->
+                 </div><!--col-md-4-->
+                   <div class="col-md-4">
+       <div class="thumbnail">
+      
+     <img src="img/quote3.jpg" class="img-rounded"  style="" />
+        <h3 align="center"><strong>Justification by Faith </strong></h3>
+        <!--</div> overlay-->
+                <p>The New York Times bestselling Seeking Allah, Finding Jesus, describes Nabeel’s dramatic journey from Islam to Christianity, complete with friendships, investigations, and supernatural dreams along the way.</p>
+                 <!--<p><a class="info" href="http://www.answeringjihad.com" class="btn btn-primary">Read More</a></p>-->
+                 <P><a href="http://www.answeringjihad.com" class="btn btn-danger">Read More</a></P>
+                 <p><div class="fb-share-button" data-href="http://localhost:8181/mustardofficial/index.html" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8181%2Fmustardofficial%2Findex.html&amp;src=sdkpreparse">Share</a></div></p><!--facebook share -->
+                 <p><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8181/mustardofficial/index.html" data-via="RUFUSNgangaGonz" data-dnt="true">Tweet</a> </p><!--twitter share-->
+                 </div><!--thumbnail-->
+                 </div><!--col-md-4-->
+
+                   <div class="col-md-4">
+       <div class="thumbnail">
+      
+     <img src="img/unbeleivers.jpg" class="img-rounded"  style="" />
+        <h3 align="center"><strong>These non-believers</strong></h3>
+        <!--</div> overlay-->
+                <p>The New York Times bestselling Seeking Allah, Finding Jesus, describes Nabeel’s dramatic journey from Islam to Christianity, complete with friendships, investigations, and supernatural dreams along the way.</p>
+                 <!--<p><a class="info" href="http://www.answeringjihad.com" class="btn btn-primary">Read More</a></p>-->
+                 <P><a href="http://www.answeringjihad.com" class="btn btn-danger">Read More</a></P>
+                 <p><div class="fb-share-button" data-href="http://localhost:8181/mustardofficial/index.html" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8181%2Fmustardofficial%2Findex.html&amp;src=sdkpreparse">Share</a></div></p><!--facebook share -->
+                 <p><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:8181/mustardofficial/index.html" data-via="RUFUSNgangaGonz" data-dnt="true">Tweet</a> </p><!--twitter share-->
+                 </div><!--thumbnail-->
+                 </div><!--col-md-4-->
+    
+    
+    
+      </div><!--row-->
+      </section><!--articles2-->
       </div><!--main-->
       </div><!--row-->
       </div><!-- well-->
@@ -412,7 +497,51 @@ transition-delay:.2s;
   <section id="blogs">
 <div class="jumbotron">
 <div class="container">
-   <h3 align="center" style="font-size:2.25em; color:#ffffff;"> OUR BLOGS </h3>
+   <h3 align="center" style="font-size:2.25em; color:#ffffff;" onmouseover="blogs(this)" onmouseout="blog(this)"> OUR BLOGS </h3>
+     <ul class="ch-grid">
+          <li>
+            <div class="ch-item ch-img-1">        
+              <div class="ch-info-wrap">
+                <div class="ch-info">
+                  <div class="ch-info-front ch-img-1"></div>
+                  <div class="ch-info-back">
+                    <h3>The Myth of Gambling</h3>
+                    <p>by Naomi <a href="blogs/gambling.html">View Blog</a></p>
+                  </div>  
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="ch-item ch-img-2">
+              <div class="ch-info-wrap">
+                <div class="ch-info">
+                  <div class="ch-info-front ch-img-2"></div>
+                  <div class="ch-info-back">
+                    <h3>Leadership Series</h3>
+                    <p>by Tom Kariuki <a href="blogs.html">View Blog</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="ch-item ch-img-3">
+              <div class="ch-info-wrap">
+                <div class="ch-info">
+                  <div class="ch-info-front ch-img-3"></div>
+                  <div class="ch-info-back">
+                    <h3>What is the Gospel</h3>
+                    <p>by Rufus <a href="articles/berean.html">View Blog</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+ 
+
+
     <div class="col-md-4">
       <div class="thumbnail">
         <img onmouseover="bigimg(this)" onmouseout="normalimg(this)" src="img/politics.jpg" class="img-circle">
@@ -456,13 +585,14 @@ transition-delay:.2s;
 <div class="container">
 
   <div class="col-sm-8 col-sm-offset-2 text-center">
-  <h4 style="align:center; font-family:'freight-text-pro'; font-size:2.25em;"><em><strong>Contact Us</strong></em></h4>
+  <h4 style="align:center; font-family:'freight-text-pro'; font-size:2.25em;"><em><strong id="contacts">Contact Us</strong></em></h4>
   <ul class="list-inline center-block">
   <li><a href="http://facebook.com/mustard"><img src="img/soc_fb.png" /></li>
   <li><a href="http://twitter.com/mustard"><img src="img/soc_tw.png" /></li>
   <li><a href="http://google.com/+mustard"><img src="img/soc_gplus.png" /></a></li>
   <li><a href="http://google.com/+mustard"><img src="img/soc_pin.png" /></a></li>
-  
+
+  <!--<img src="img/staticmap.png" class="img-responsive"><br><br>-->
     
   </ul>
   
@@ -512,6 +642,27 @@ $(window).load(function() {
   function hover2(h){
     h.style.color=" #0033FF";
   }
+
+  //articles
+  function articles(a){
+    a.style.color="#000000";
+  }
+
+  //article normal
+  function article(a){
+    a.style.color="#d15f23"
+  }
+
+  //blogs
+  function blogs(b){
+    b.style.color="#d15f23";
+  }
+
+  //normal blogs
+  function blog(b){
+    b.style.color="#ffffff";
+  }
+
   // politics
     function bigimg(x){
       x.style.height="350px";

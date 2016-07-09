@@ -60,8 +60,28 @@
   </div>
 </div>
 </div><!--col-md-12 -->
+<div class="jumbotron">
+  
+  <div id="print-content">
+ <form>
+
+  <input type="button" onclick="printDiv('print-content')" value="print a div!"/>
+</form>
+</div>
+
+</div>
 </div><!--well -->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+
+function printDiv(divName) {
+ alert('s');
+ var printContents = document.getElementById(divName).innerHTML;
+ w=window.open();
+ w.document.write(printContents);
+ w.print();
+ w.close();
+}
 </body>
 </html>

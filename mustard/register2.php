@@ -10,7 +10,7 @@
     <title>Admin</title>
     <!-- Bootstrap -->
      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
     .panel-heading{
     	float: center;
@@ -23,7 +23,7 @@
     }
     	form{
     		display: inline-block;
-    				border:solid black 1px;
+    			/*	border:solid black 2px;*/
     			width: 40%;
     			height: 50%;
     			margin-left: 30%;
@@ -32,6 +32,9 @@
     			float:center;
     	
     	}
+      .login-panel {
+        margin-top: 150px;
+
     </style>
 </head>
 <body>
@@ -59,30 +62,30 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
     
       <ul class="nav navbar-nav navbar-right" style="font-size:1.2em;">
-        <li class="active"><a href="#">Home </a></li>
+        <li class="active"><a href="../index.html">Home </a></li>
           <li><a href="#">News</a></li>
           <li  class="active"><a href="#">Register</a></li>
         <li class="active"><a href="http://linoit.com/users/ruddy12/canvases/Mustard#e41746255">NoticeBoard</a></li>
-        <li class="dropdown">
+        <!--<li class="dropdown">
           <a data-target="#" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Inspiration Stories</a></li>
             <li><a href="#">Notice Board</a></li>
             <li><a href="#">Trends</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Business Forum</a></li>
+            <li><a href="#">Business Forum</a></li>-->
             
           </ul>
         </li>
       </ul>
        <!--search bar-->
         
-       <form action="" class="navbar-form navbar-right" role="form-control" action="search.php" method="get">
+      <!-- <form action="" class="navbar-form navbar-right" role="form-control" action="search.php" method="get">
            <div class="form-group has-feedback">
              <i class="form-control-feedback glyphicon glyphicon-search"></i>
              <input type="text" class="form-control" name="search" placeholder="search">
            </div>
-        </form>
+        </form>-->
      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -123,6 +126,40 @@
 </div><!--panel-->
 </div>
 
+<div class="container"><!-- container class is used to centered  the body of the browser with some decent width-->
+    <div class="row"><!-- row class is used for grid system in Bootstrap-->
+        <div class="col-md-4 col-md-offset-4"><!--col-md-4 is used to create the no of colums in the grid also use for medimum and large devices-->
+            <div class="login-panel panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Registration</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form" method="POST" action="register.php">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Username" name="name" type="text" autofocus>
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Password" name="pass" type="password" value="">
+                            </div>
+
+
+                            <input class="btn btn-lg btn-success btn-block" type="submit" value="register" name="register" >
+
+                        </fieldset>
+                    </form>
+                    <center><b>Already registered ?</b> <br></b><a href="login.php">Login here</a></center><!--for centered text-->
+                    <button type="submit" class="btn btn-primary" value="register" name="register">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -140,13 +177,18 @@ if(isset($_POST['register']))
     $user_pass=$_POST['pass'];//same
     $user_email=$_POST['email'];//same
 
+      if ($user_name='') {
+        
+        echo "<script>alert('please enter your name')</script>";
+      }
 
-    if($user_name=='')
+   /* if(preg_match("/(.+)( )(.+)/", $user_name))
     {
+
         //javascript use for input checking
-        echo"<script>alert('Please enter the name')</script>";
+        echo"<script>alert('Please enter the full name')</script>";
 exit();//this use if first is not work then other will not show
-    }
+    }*/
 
     if($user_pass=='')
     {
@@ -161,11 +203,11 @@ exit();
     }
 //validates name,email and password pattern and character
 
-if (!preg_match("/^[a-zA-Z]+$/",$user_name)) {
+/*if (!preg_match("/^[a-zA-Z]+$/",$user_name)) {
 	
 	echo "<script>alert('Name must contain only alphabets and space')</script>";
 	exit();
-}
+}*/
 if (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
 	
 	echo "<script>alert('Please enter a valid email address')</script>";

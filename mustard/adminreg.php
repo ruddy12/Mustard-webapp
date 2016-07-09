@@ -22,7 +22,7 @@
     }
     	form{
     		display: inline-block;
-    				border:solid black 1px;
+    				/*border:solid black 1px;*/
     			width: 40%;
     			height: 50%;
     			margin-left: 30%;
@@ -116,6 +116,11 @@
    <input type="number" class="form-control" name="admin_number" required pattern=".{9}" title="9 characters minimum" placeholder="xxx-xxx-xxx" />
                     
  </div>
+ <div class="form-group">
+   <label>Upload Image</label>
+   <input type="file" name="image" accept="image/jpeg" id="file">
+   <button type="submit" class="btn btn-info" value="upload" name="submit">Upload</button>
+ </div>
 
  <div class="form-group">
  	<label for="password" name="control-label">Password</label>
@@ -150,6 +155,14 @@ if (isset($_POST['admin_register'])) {
   $admin_zipcode = $_POST['admin_zipcode'];
   $admin_number = $_POST['admin_number'];
   $admin_pass = $_POST['admin_pass'];
+   
+  if(isset($_POST['submit']))
+  {
+  $image = file_get_contents($_FILES,['image']['tmp_name']);
+  $image = mysqli_real_escape_string($image);
+  echo "image successful";
+  }
+
   #$admin_number = '254'.substr($admin_number,-9);
     //validate the form
 
@@ -212,6 +225,31 @@ if (isset($_POST['admin_register'])) {
     echo "<script>alert('please enter a 9 digit number')</script>";
     exit();
   }*/
+if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) { 
+
+  // Temporary file name stored on the server
+  $tmpName  = $_FILES['image']['tmp_name'];  
+
+  // Read the file 
+  $fp      = fopen($tmpName, 'r');
+  $data = fread($fp, filesize($tmpName));
+  $data = addslashes($data);
+  fclose($fp);
+
+
+  // Create the query and insert
+
+  // Print results
+  print "Thank you, your file has been uploaded.";
+
+  }
+  else {
+  print "No image selected/uploaded";
+  }
+
+
+
+
   if ($admin_pass=='') {
     
     echo "<script>alert('please enter your password')</script>";
@@ -231,7 +269,7 @@ exit();
 
   //insert user into db
 
-  $insert_user = "insert into admin(admin_name,admin_email,admin_zipcode,admin_number,admin_pass) VALUE ( '$admin_name','$admin_email','$admin_zipcode','$admin_number',md5('$admin_pass')) ";
+  $insert_user = "insert into admin(admin_name,admin_email,admin_zipcode,admin_number,image,admin_pass) VALUE ( '$admin_name','$admin_email','$admin_zipcode','$admin_number','$image',md5('$admin_pass')) "; //image attribute in db is blob type
 
   if (mysqli_query($con, $insert_user)) {
 
