@@ -8,9 +8,75 @@
 <style>
     .login-panel {
         margin-top: 150px;
+    }
+    form{
+            display: inline-block;
+                /*  border:solid black 2px;*/
+                width: 40%;
+                height: 50%;
+                margin-left: 30%;
+                margin-right: 30%;
+                padding: 5%;
+                float:center;
+        
+        }
 
 </style>
 <body>
+
+<nav class="navbar navbar-default navbar-inverse">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+     </button>
+      <a class="navbar-brand">
+       <a href="../index.html"> <img  style="width:160px; height: 35px; align=left;" src="../img/musstardssed.png" ></a>
+        
+      </a>
+    </div>
+    
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+    
+      <ul class="nav navbar-nav navbar-right" style="font-size:1.2em;">
+        <li class="active"><a href="../index.html">Home </a></li>
+          <li  class="active"><a href="registration.php">Register</a></li>
+        
+   <!--     <li class="dropdown">
+          <a data-target="#" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Inspiration Stories</a></li>
+            <li><a href="#">Notice Board</a></li>
+            <li><a href="#">Trends</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Business Forum</a></li>
+            
+          </ul> -->
+        </li>
+      </ul>
+       <!--search bar-->
+        
+      <!-- <form action="" class="navbar-form navbar-right" role="form-control" action="search.php" method="get">
+           <div class="form-group has-feedback">
+             <i class="form-control-feedback glyphicon glyphicon-search"></i>
+             <input type="text" class="form-control" name="search" placeholder="search">
+           </div>
+        </form>-->
+     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
 
 <div class="container"><!-- container class is used to centered  the body of the browser with some decent width-->
     <div class="row"><!-- row class is used for grid system in Bootstrap-->
